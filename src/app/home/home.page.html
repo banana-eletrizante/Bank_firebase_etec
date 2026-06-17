@@ -1,20 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content color="primary">
+  <div class="ion-padding">
+    
+    <div class="welcome-section">
+      <h1>Olá, {{ nome }}!</h1>
+      <p>Suas finanças em dia.</p>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card class="balance-card ion-no-margin">
+      <ion-card-content>
+        <ion-text color="light">
+          <p class="label-card">Saldo Atual</p>
+          <h2 class="balance-amount">R$ {{ saldo | number:'1.2-2' }}</h2>
+        </ion-text>
+        <div class="divider"></div>
+        <div class="income-info">
+          <div class="status-dot"></div>
+          <span class="income-label">Receitas</span>
+          <span class="income-value">R$ {{ receita | number:'1.2-2' }}</span>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="actions-card ion-no-margin ion-margin-top">
+      <ion-card-content>
+        <section class="action-group">
+          <h3 class="action-title">Sacar</h3>
+          <ion-item lines="none" class="input-item">
+            <ion-input type="number" #inputSaque placeholder="0.00"></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="executarOperacao('saque', inputSaque)" class="btn-action">
+            SACAR
+          </ion-button>
+        </section>
+
+        <section class="action-group ion-margin-top">
+          <h3 class="action-title">Depositar</h3>
+          <ion-item lines="none" class="input-item">
+            <ion-input type="number" #inputDep placeholder="0.00"></ion-input>
+          </ion-item>
+          <ion-button expand="block" (click)="executarOperacao('deposito', inputDep)" class="btn-action">
+            DEPOSITAR
+          </ion-button>
+        </section>
+      </ion-card-content>
+    </ion-card>
+
   </div>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="home" routerLink="/home" class="tab-selected">
+      <ion-icon name="speedometer-outline"></ion-icon>
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="transacoes" routerLink="/transacoes">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Transações</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="metas" routerLink="/metas">
+      <ion-icon name="pie-chart-outline"></ion-icon>
+      <ion-label>Metas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="configuracoes" routerLink="/configuracoes">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurações</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

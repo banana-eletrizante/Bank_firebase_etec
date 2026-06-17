@@ -1,0 +1,65 @@
+.summary-card {
+    background: var(--ion-color-tertiary) !important;
+    border-radius: 15px;
+    margin: 15px;
+  
+    .summary-content {
+      display: flex;
+      padding: 15px 0;
+    }
+  
+    .summary-item {
+      flex: 1;
+      text-align: center;
+      
+      h3 { font-size: 0.9rem; opacity: 0.7; margin: 0; }
+      p { font-size: 1.2rem; font-weight: bold; margin-top: 5px; }
+  
+      &.border-right {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      }
+  
+      .value-receita { color: var(--ion-color-success); }
+      .value-despesa { color: var(--ion-color-danger); }
+    }
+  }
+  
+  .custom-list {
+    background: transparent !important;
+    
+    ion-item {
+      --background: transparent;
+      --color: #ffffff;
+      --border-color: rgba(255, 255, 255, 0.05);
+      --padding-start: 15px;
+  
+      .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        ion-icon { font-size: 20px; }
+      }
+  
+      .trans-title { font-size: 1rem; font-weight: 500; }
+      .trans-subtitle { font-size: 0.8rem; opacity: 0.5; }
+      .trans-value { font-weight: bold; font-size: 1rem; }
+    }
+  }
+  
+  ion-segment {
+    --background: rgba(255, 255, 255, 0.05);
+    ion-segment-button {
+      --color: #8e9aaf;
+      --color-checked: #ffffff;
+      --indicator-color: #ffffff;
+    }
+  }
+  
+  .tab-selected {
+    --color: #ffffff;
+    color: #ffffff;
+  }

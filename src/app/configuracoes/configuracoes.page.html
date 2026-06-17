@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Configurações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="ion-padding">
+    
+    <div class="welcome-section ion-text-center">
+      <div style="background: var(--ion-color-secondary); width: 80px; height: 80px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+        <ion-icon name="person-outline" style="font-size: 40px;" color="light"></ion-icon>
+      </div>
+      <h2 style="color: white; font-weight: bold; margin-top: 15px;">{{ usuario.nome }}</h2>
+      <p style="color: white; opacity: 0.7;">Cliente Bank ETEC</p>
+    </div>
+
+    <ion-card class="actions-card ion-no-margin ion-margin-top">
+      <ion-list lines="full" style="background: transparent;">
+        <ion-item style="--background: transparent; color: white;">
+          <ion-icon name="card-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <p style="color: rgba(255,255,255,0.6);">CPF</p>
+            <h3>{{ usuario.cpf }}</h3>
+          </ion-label>
+        </ion-item>
+
+        <ion-item style="--background: transparent; color: white;">
+          <ion-icon name="calendar-outline" slot="start" color="secondary"></ion-icon>
+          <ion-label>
+            <p style="color: rgba(255,255,255,0.6);">Idade</p>
+            <h3>{{ usuario.idade }} anos</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    <ion-button expand="block" color="danger" (click)="logout()" class="btn-action ion-margin-top" style="--background: #ff4961;">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      ENCERRAR SESSÃO
+    </ion-button>
+
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="speedometer-outline"></ion-icon>
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="transacoes" routerLink="/transacoes">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Extrato</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="metas" routerLink="/metas">
+      <ion-icon name="pie-chart-outline"></ion-icon>
+      <ion-label>Metas</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="config" class="tab-selected">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Ajustes</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

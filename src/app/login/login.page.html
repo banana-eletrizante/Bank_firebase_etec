@@ -1,0 +1,50 @@
+<ion-content color="primary">
+  <div class="ion-padding auth-container">
+    
+    <!-- Seção de Logo -->
+    <div class="logo-section">
+      <ion-icon name="wallet-outline" style="font-size: 80px;" color="light"></ion-icon>
+      <h1 style="color: white; font-weight: 800; font-size: 2.5rem; margin-top: 10px;">K7 Bank</h1>
+      <p style="color: white; opacity: 0.8;">Seu simulador bancário.</p>
+    </div>
+
+    <!-- Card de Login -->
+    <ion-card class="actions-card ion-no-margin">
+      <ion-card-content>
+        <h3 style="color: white; font-weight: bold; margin-bottom: 20px;" class="ion-text-center">Acesse sua conta</h3>
+        
+        <ion-item lines="none" class="input-item">
+          <ion-input 
+            label="CPF (Apenas números)" 
+            labelPlacement="floating" 
+            type="tel" 
+            [(ngModel)]="cpf" 
+            placeholder="00000000000">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input 
+            label="Senha" 
+            labelPlacement="floating" 
+            type="password" 
+            [(ngModel)]="senha">
+          </ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="onLogin()" class="btn-action ion-margin-top">
+          ENTRAR
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Link para Cadastro -->
+    <div class="ion-text-center ion-margin-top" style="color: white;">
+      <p>Ainda não tem uma conta?</p>
+      <a routerLink="/cadastro" style="color: var(--ion-color-secondary); font-weight: bold; text-decoration: none; font-size: 1.1rem;">
+        Cadastre-se agora
+      </a>
+    </div>
+
+  </div>
+</ion-content> 

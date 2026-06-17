@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Abrir Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="ion-padding">
+    
+    <div class="welcome-section">
+      <h1 style="color: white;">Seja bem-vindo!</h1>
+      <p style="color: white; opacity: 0.8;">Preencha os dados abaixo para começar.</p>
+    </div>
+
+    <ion-card class="actions-card ion-no-margin">
+      <ion-card-content>
+        
+        <ion-item lines="none" class="input-item">
+          <ion-input label="Nome Completo" labelPlacement="floating" [(ngModel)]="dados.nome"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input label="CPF (Login)" labelPlacement="floating" type="tel" [(ngModel)]="dados.cpf"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input label="Sua Idade" labelPlacement="floating" type="number" [(ngModel)]="dados.idade"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input label="Crie uma Senha" labelPlacement="floating" type="password" [(ngModel)]="dados.senha"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input label="Confirme a Senha" labelPlacement="floating" type="password" [(ngModel)]="dados.confirma"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="onCadastrar()" class="btn-action ion-margin-top">
+          FINALIZAR CADASTRO
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+    <p class="ion-text-center" style="color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-top: 20px;">
+      Ao clicar em finalizar, você concorda com nossos termos.
+    </p>
+
+  </div>
+</ion-content>

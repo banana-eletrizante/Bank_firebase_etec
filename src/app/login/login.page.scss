@@ -1,0 +1,24 @@
+.auth-container {
+  display: flex; flex-direction: column; justify-content: center; min-height: 100%;
+}
+.logo-section {
+  text-align: center; padding: 20px 0;
+  h1 { font-weight: bold; margin: 0; }
+  p { opacity: 0.7; }
+}
+.actions-card {
+  background: var(--ion-color-tertiary) !important; border-radius: 15px;
+}
+.input-item {
+  --background: #ffffff; --border-radius: 8px; --color: #333; margin-bottom: 10px;
+}
+.btn-action {
+  --background: var(--ion-color-secondary); --border-radius: 8px; font-weight: bold; height: 48px;
+}
+.welcome-section { padding: 15px 0; h1 { font-size: 1.8rem; font-weight: bold; } }
+.balance-card {
+  background: linear-gradient(to bottom right, var(--ion-color-secondary), var(--ion-color-tertiary)) !important;
+  border-radius: 15px; padding: 10px;
+  .balance-amount { font-size: 2.4rem; font-weight: 800; }
+  .divider { height: 1px; background: rgba(255,255,255,0.2); margin: 15px 0; }
+}

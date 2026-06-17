@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Extrato</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-segment value="todas" mode="md">
+      <ion-segment-button value="todas">
+        <ion-label>TODAS</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="categorias">
+        <ion-label>CATEGORIAS</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="primary">
+  <ion-card class="summary-card">
+    <ion-card-content class="summary-content">
+      <div class="summary-item border-right">
+        <h3 class="label-receita">Receitas</h3>
+        <p class="value-receita">R$ {{ receitaTotal | number:'1.2-2' }}</p>
+      </div>
+      <div class="summary-item">
+        <h3 class="label-despesa">Despesas</h3>
+        <p class="value-despesa">R$ {{ despesaTotal | number:'1.2-2' }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list lines="full" class="ion-no-padding custom-list">
+    <ion-item *ngFor="let t of transacoes">
+      <div slot="start" class="icon-box" [style.background]="'var(--ion-color-' + t.color + ')'">
+        <ion-icon [name]="t.icon" color="light"></ion-icon>
+      </div>
+      <ion-label>
+        <h2 class="trans-title">{{ t.titulo }}</h2>
+        <p class="trans-subtitle">{{ t.data }}</p>
+      </ion-label>
+      <ion-text slot="end" [color]="t.tipo === 'receita' ? 'success' : 'danger'">
+        <span class="trans-value">
+          {{ t.tipo === 'receita' ? '+' : '-' }} R$ {{ t.valor | number:'1.2-2' }}
+        </span>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-tab-bar slot="bottom" color="primary">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="speedometer-outline"></ion-icon>
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="transacoes" routerLink="/transacoes" class="tab-selected">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Transações</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="metas" routerLink="/metas">
+      <ion-icon name="pie-chart-outline"></ion-icon>
+      <ion-label>Metas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="configuracoes" routerLink="/configuracoes">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurações</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
