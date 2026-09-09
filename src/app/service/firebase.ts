@@ -1,19 +1,12 @@
 import { Injectable } from '@angular/core';
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { 
-  getFirestore, collection, addDoc, onSnapshot, 
-  query, Firestore, doc, updateDoc, orderBy, getDoc, setDoc, deleteDoc 
+import {
+  getFirestore, collection, addDoc, onSnapshot,
+  query, Firestore, doc, updateDoc, orderBy, getDoc, setDoc, deleteDoc
 } from 'firebase/firestore';
+import { environment } from '../../environments/environment';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDD_MBYCwFNjnfVCv8XbbvcaU1k-xPQapw",
-  authDomain: "bank-db-ab48a.firebaseapp.com",
-  projectId: "bank-db-ab48a",
-  storageBucket: "bank-db-ab48a.firebasestorage.app",
-  messagingSenderId: "509817102888",
-  appId: "1:509817102888:web:00ec15cf0be512ec698b1d",
-  measurementId: "G-D4HS95RCM2"
-};
+const firebaseConfig = environment.firebase;
 
 @Injectable({ providedIn: 'root' })
 export class FirebaseService {
